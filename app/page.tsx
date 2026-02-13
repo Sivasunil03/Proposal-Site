@@ -349,7 +349,9 @@ const CelebrationView = ({
         </div>
         <button
           className="celebration-btn"
-          onClick={() => window.location.reload()}
+          onClick={() => {
+            window.location.href = "/";
+          }}
           style={{
             background: `linear-gradient(135deg, ${theme.primary}, ${theme.secondary})`,
           }}

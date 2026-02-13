@@ -277,14 +277,20 @@ body {
 .cta-button {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  padding: 18px 40px;
-  font-size: 1.15rem;
+  justify-content: center;
+  gap: 10px;
+
+  width: 100%;
+  max-width: 420px; /* prevents too wide on desktop */
+
+  padding: 16px 28px;
+  font-size: 1.05rem;
   font-weight: 600;
   color: white;
   border: none;
   border-radius: 100px;
   cursor: pointer;
+
   box-shadow: var(--shadow-lg);
   transition: all 0.3s var(--transition-smooth);
 }
@@ -499,6 +505,23 @@ body {
   outline: none;
   border-color: #ff6b9d;
   box-shadow: 0 0 0 4px rgba(255, 107, 157, 0.1);
+}
+
+@media (max-width: 480px) {
+  .input-field {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    border-radius: 10px;
+  }
+
+  .input-field.large {
+    font-size: 1.1rem;
+    padding: 14px 16px;
+  }
+
+  .input-label {
+    font-size: 0.8rem;
+  }
 }
 
 .char-counter {
