@@ -1,0 +1,379 @@
+/* ============================================
+   LETTER CARD STYLES - ELEGANT & PLAYFUL
+   No begging, just fun interactions
+   ============================================ */
+
+.letter-card-wrapper {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 20px;
+  perspective: 1500px;
+  position: relative;
+  z-index: 10;
+}
+
+.letter-card {
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: rotateY(-15deg) translateY(30px);
+}
+
+.letter-card.revealed {
+  opacity: 1;
+  transform: rotateY(0deg) translateY(0);
+}
+
+.letter-paper {
+  background: linear-gradient(145deg, #fffef8 0%, #fdf9f0 100%);
+  border-radius: 16px;
+  padding: 48px 40px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: visible;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Paper texture */
+.paper-grain {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(139, 119, 101, 0.03) 2px,
+    rgba(139, 119, 101, 0.03) 3px
+  );
+  pointer-events: none;
+  border-radius: 16px;
+}
+
+/* Corner flourishes */
+.corner-flourish {
+  position: absolute;
+  font-size: 1.5rem;
+  opacity: 0.2;
+  color: #8b7765;
+}
+
+.corner-flourish.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.corner-flourish.top-right {
+  top: 20px;
+  right: 20px;
+  transform: scaleX(-1);
+}
+
+.corner-flourish.bottom-left {
+  bottom: 20px;
+  left: 20px;
+  transform: scaleY(-1);
+}
+
+.corner-flourish.bottom-right {
+  bottom: 20px;
+  right: 20px;
+  transform: scale(-1);
+}
+
+/* Letter Content */
+.letter-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.letter-content.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.letter-date {
+  font-size: 0.9rem;
+  color: #999;
+  font-style: italic;
+  margin-bottom: 24px;
+  font-family: "Georgia", serif;
+}
+
+.letter-greeting {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 32px;
+  font-family: "Dancing Script", cursive;
+}
+
+.letter-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 32px;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.letter-message {
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+
+.letter-signature {
+  text-align: right;
+  margin-top: auto;
+}
+
+.signature-line {
+  font-size: 0.95rem;
+  color: #888;
+  margin-bottom: 8px;
+  font-family: "Georgia", serif;
+  font-style: italic;
+}
+
+.signature-name {
+  font-family: "Dancing Script", cursive;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Buttons Section */
+.letter-buttons {
+  margin-top: auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.letter-buttons.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Playful hint - gentle and fun */
+.playful-hint {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #888;
+  margin-bottom: 16px;
+  animation: gentleFadeIn 0.5s ease-out;
+  font-style: italic;
+  width: 100%;
+}
+
+@keyframes gentleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.buttons-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  min-height: 100px;
+  justify-content: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.yes-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 18px 40px;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: white;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  min-width: 200px;
+}
+
+.yes-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 50%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s;
+}
+
+.yes-button:hover::before {
+  transform: translateX(100%);
+}
+
+.yes-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.yes-button:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.sparkle-icon {
+  animation: sparkleRotate 2s linear infinite;
+}
+
+@keyframes sparkleRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.no-button {
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #777;
+  background: rgba(0, 0, 0, 0.04);
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-width: 120px;
+  user-select: none;
+}
+
+.no-button:hover {
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.no-button.floating {
+  position: fixed;
+  z-index: 1000;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  animation: playfulWiggle 0.4s ease-in-out;
+}
+
+@keyframes playfulWiggle {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-8deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .letter-card-wrapper {
+    padding: 16px;
+  }
+
+  .letter-paper {
+    padding: 32px 24px;
+    min-height: 550px;
+  }
+
+  .letter-title {
+    font-size: 2rem;
+  }
+
+  .letter-message {
+    font-size: 1.2rem;
+  }
+
+  .yes-button {
+    padding: 16px 32px;
+    font-size: 1rem;
+    min-width: 180px;
+  }
+
+  .signature-name {
+    font-size: 1.6rem;
+  }
+
+  .buttons-row {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .letter-buttons {
+    padding-top: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .letter-paper {
+    padding: 28px 20px;
+    min-height: 500px;
+  }
+
+  .letter-title {
+    font-size: 1.75rem;
+    margin-bottom: 24px;
+  }
+
+  .letter-message {
+    font-size: 1.1rem;
+    margin-bottom: 32px;
+  }
+
+  .corner-flourish {
+    font-size: 1.2rem;
+  }
+
+  .yes-button {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+  }
+
+  .no-button {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+}
