@@ -30,6 +30,7 @@ type Theme = {
   secondary: string;
   accent: string;
   name: string;
+  text?: string;
 };
 
 type ProposalData = {

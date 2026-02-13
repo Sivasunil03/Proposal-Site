@@ -18,7 +18,7 @@ type LetterCardProps = {
   font: string;
   onYes: () => void;
   onNoHover: () => void;
-  noBtnRef: React.RefObject<HTMLButtonElement>;
+  noBtnRef: React.RefObject<HTMLButtonElement | null>;
 };
 
 // Fun, playful messages (not begging!)
