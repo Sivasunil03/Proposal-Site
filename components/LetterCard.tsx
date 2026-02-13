@@ -22,13 +22,13 @@ type LetterCardProps = {
 };
 
 // Fun, playful messages (not begging!)
-const PLAYFUL_HINTS = [
-  "Think about it... 💭",
-  "Take your time 🌸",
-  "No pressure! 😊",
-  "Just wondering... 💫",
-  "Still here! ✨",
-];
+// const PLAYFUL_HINTS = [
+//   "Think about it... 💭",
+//   "Take your time 🌸",
+//   "No pressure! 😊",
+//   "Just wondering... 💫",
+//   "Still here! ✨",
+// ];
 
 export default function LetterCard({
   theme,
@@ -74,9 +74,9 @@ export default function LetterCard({
 
       // Show playful hint every 2 hovers
       if (newCount % 2 === 0 && newCount < 10) {
-        setCurrentHint(
-          PLAYFUL_HINTS[Math.floor(newCount / 2) % PLAYFUL_HINTS.length],
-        );
+        // setCurrentHint(
+        //   PLAYFUL_HINTS[Math.floor(newCount / 2) % PLAYFUL_HINTS.length],
+        // );
         setShowHint(true);
         setTimeout(() => setShowHint(false), 2000);
       }

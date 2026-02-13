@@ -541,7 +541,7 @@ export default function ValentineApp() {
                   </p>
 
                   <a
-                    href="https://github.com/yourusername/love-letter"
+                    href="https://github.com/Sivasunil03/Proposal-Site"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="popup-link"
